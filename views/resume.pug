@@ -1,0 +1,41 @@
+extends layout
+
+block title
+  title #{ __("Juan Ferreras - Designer & Developer from Argentina | Resume") }
+
+script.
+  window.location.href="https://linkedin.com/in/ferrerasjuan"
+
+block body
+  body.resume(itemscope='', itemtype='http://schema.org/Person')
+    header.resume__header
+      .resume__container
+        .resume__title
+          h1(itemprop='name') 
+            | Juan 
+            span Ferreras
+          h3(itemprop='jobTitle')
+            | #{ __("Designer") } 
+            span.amp &
+            |  #{ __("Front-End Developer") }
+        .resume__details
+          ul
+            li(itemprop='address', itemscope='', itemtype='http://schema.org/PostalAddress')
+              span(itemprop='addressLocality') Santa Fe
+              | , 
+              span(itemprop='addressCountry') Argentina
+            li(itemprop='birthDate') #{ __("29th of April, 1995") }
+            li
+              ul.resume__social
+                li
+                  a(href="https://ar.linkedin.com/in/ferrerasjuan" target="_BLANK") 
+                    include ../src/img/linkedin.svg
+                li
+                  a(href="https://github.com/juanferreras" target="_BLANK") 
+                    include ../src/img/github.svg
+                li
+                  a(href="https://stackoverflow.com/users/6667848/juan-ferreras" target="_BLANK") 
+                    include ../src/img/stackoverflow.svg
+
+    a.resume__btn-back(href="/" title="Back to home")
+      include ../src/img/left.svg

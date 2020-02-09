@@ -1,0 +1,43 @@
+{
+  "name": "juanferreras",
+  "version": "1.0.0",
+  "description": "Personal page",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/juanferreras/juanferreras.com.git"
+  },
+  "scripts": {
+    "imagemin": "imagemin src/img/* --out-dir=public/img",
+    "start": "grunt build && node index.js grunt",
+    "build": "grunt build && npm run imagemin",
+    "postinstall": "npm run build"
+  },
+  "main": "index.html",
+  "author": "Juan Ferreras",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^6.4.0",
+    "body-parser": "^1.15.2",
+    "email-templates": "^2.4.1",
+    "express": "^4.14.0",
+    "grunt": "^1.0.1",
+    "grunt-browser-sync": "^2.2.0",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-postcss": "^0.8.0",
+    "grunt-sass": "^1.2.1",
+    "grunt-uncss": "^0.6.1",
+    "i18n-2": "^0.6.3",
+    "imagemin-cli": "^3.0.0",
+    "node-sass": "^3.8.0",
+    "normalize-range": "^0.1.2",
+    "parallelshell": "^2.0.0",
+    "postcss": "^5.1.2",
+    "postcss-discard-comments": "^2.0.4",
+    "postcss-value-parser": "^3.3.0",
+    "pug": "^2.0.0-beta5"
+  },
+  "devDependencies": {
+    "susy": "^2.2.12"
+  }
+}

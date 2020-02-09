@@ -1,0 +1,33 @@
+@media print{
+  @page {
+    margin: .7cm;
+  }
+  body {
+    font-size: 10pt;
+  }
+  section p{
+    line-height: 1.7;
+  }
+  section:nth-child(4n),
+  section:nth-child(6n){
+    page-break-after: always;
+  }
+  header h1,
+  header h3{
+    color: map-get($colors, purple);
+  }
+  header.about {
+    background: transparent;
+    padding: 0;
+    margin: 0;
+  }
+  header.about h1{
+    font-weight: normal;
+  }
+  header.about h1>strong{
+    font-weight:bold;
+  }
+  .down-arrow{
+    display:none;
+  }
+}

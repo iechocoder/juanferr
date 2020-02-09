@@ -1,0 +1,232 @@
+*,
+*:before,
+*:after{
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html,
+body,
+main{
+  width: 100%;
+  max-width: 100%;
+  min-height: 100%;
+  min-height: 100vh;
+  height: auto;
+}
+body{
+  overflow-x:hidden;
+  overflow-y: auto;
+  background: map-get($colors, purple);
+  webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-overflow-scrolling: touch;
+  -webkit-backface-visibility: hidden !important;
+  -webkit-font-feature-settings: "kern", "liga";
+  font-feature-settings: "kern", "liga";
+  width: 100%;
+  position: relative;
+  z-index: 0;
+}
+.body--frozen {
+  overflow:hidden;
+}
+main{
+  position: relative;
+  z-index: 1;
+}
+main section#landing{
+  height: 100vh;
+  min-height: 600px;
+  @include sm-height{
+    min-height: 800px;
+  }
+}
+main section{
+  min-height: 100vh;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  @include xs-width{
+    height: 100vh;
+    min-height: 800px;
+  }
+  @include lg-width-sm-height{
+    overflow: hidden;
+  }
+}
+main nav{
+  @include lg-width-sm-height{
+    display: block;
+  }
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display:inline-block;
+}
+ul li{
+  display: inline-block;
+  margin: 0 10px;
+}
+img {
+  width: auto;
+  max-width: 100%;
+  height: auto !important;
+}
+*:focus {
+  outline: none !important;
+}
+::-moz-selection { 
+  color: white;
+  background: rgba(31,20,47,0.99);
+}
+
+::selection {
+  color: white;
+  background: rgba(31,20,47,0.99);
+}
+
+input::-webkit-input-placeholder {
+  color: rgba(255,255,255,0.8);
+}
+input:active::-webkit-input-placeholder ,
+input:focus::-webkit-input-placeholder {
+  color: rgba(255,255,255,0.2);
+}
+input::-moz-placeholder {
+  color: rgba(255,255,255,0.8);
+}
+input:active::-moz-placeholder,
+input:focus::-moz-placeholder {
+  color: rgba(255,255,255,0.2);
+}
+input:-ms-input-placeholder {
+  color: rgba(255,255,255,0.8);
+}
+input:active::-ms-input-placeholder ,
+input:focus::-ms-input-placeholder {
+  color: rgba(255,255,255,0.2);
+}
+
+a {
+  color: map-get($colors, white);
+  font-weight: bold;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+}
+
+a.underline::after{
+  width: 100%;
+  content: "";
+  display: block;
+  height: 2px;
+  background: #fff;
+  position: relative;
+  top: 5px;
+  opacity: 0;
+  transition: opacity 0.5s ease, top 0.3s ease, background 0.4s ease;
+}
+
+a:focus,
+a:hover{
+  color: map-get($colors, red);
+}
+a.underline:focus::after,
+a.underline:hover::after{
+  top: -1px;
+  opacity: 1;
+  background: map-get($colors, red)
+}
+
+a.underline--active::after{
+  top: -1px;
+  opacity: 1;
+  background: map-get($colors, white);
+}
+
+a,
+.btn,
+.btn::before,
+.btn::after,
+svg,
+svg g{
+  transition: all 0.4s ease;
+}
+
+.btn {
+  cursor: pointer;
+  width: 180px;
+  display: inline-block;
+  margin: .5em .1em;
+  border: 2px solid map-get($colors, transparent-red);
+  background: map-get($colors, transparent-red);
+  vertical-align: middle;
+  position: relative;
+  z-index: 1;
+  -webkit-backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 1rem;
+  @include md-width{
+    font-size: .889rem;
+  }
+  font-weight: bold;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: .75rem 1rem;
+  color: map-get($colors, white);
+  overflow: hidden;
+  transition: border-color 0.3s ease, color 0.5s ease, background-color 0.6s ease, all 0.6s ease;
+}
+.btn:focus,
+.btn:hover {
+  background-color: map-get($colors, white);
+  border-color: map-get($colors, white);
+  color: map-get($colors, purple);
+}
+.btn-secondary{
+  color: map-get($colors, purple);
+  border-color: map-get($colors, light-grey);
+  background: transparent;
+}
+.btn-secondary:focus,
+.btn-secondary:hover{
+  color: map-get($colors, white);
+  border-color: map-get($colors, purple);
+  background: map-get($colors, purple);
+}
+.or{
+  display: block;
+  font-family: map-get($typography, proxima-nova);
+  font-style: italic;
+  color: map-get($colors, white);
+  font-size: 1rem;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+}
+.or::before,
+.or::after{
+  content:"";
+  width: 70px;
+  position: relative;
+  display: inline-block;
+  height: 2px;
+  bottom: 3px;
+  background: rgba(255,255,255,0.3)
+}
+.or::before{
+  margin-right: .75rem;
+}
+.or::after{
+  margin-left: .75rem;
+}
